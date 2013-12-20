@@ -76,7 +76,6 @@ namespace WalletObjectsSample.Handlers
         //response.ContentType = "text/xml";
       }
       catch (Exception e) {
-        Console.WriteLine(e.ToString());
         Console.Write(e.StackTrace);
       }
     }

@@ -86,7 +86,6 @@ namespace WalletObjectsSample.Handlers
       }
       catch (Exception e)
       {
-        Console.WriteLine(e.ToString());
         Console.Write(e.StackTrace);
       }
     }

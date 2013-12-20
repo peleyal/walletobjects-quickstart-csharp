@@ -42,16 +42,16 @@ namespace WalletObjectsSample.Verticals
 
           // Define Points
           LoyaltyPoints points = new LoyaltyPoints() {
-            Label = "Balance",
-            Balance = new LoyaltyPointsBalance() { String = "25.00" }
+            Label = "Points",
+            Balance = new LoyaltyPointsBalance() { String = "500" }
           };
 
           // Define Text Module Data
           IList<TextModuleData> textModulesData = new List<TextModuleData>();
 
           TextModuleData textModuleData = new TextModuleData() {
-            Header = "Text Header",
-            Body = "Text Body"
+            Header = "Jane's Baconrista Rewards",
+            Body = "You are 5 coffees away from receiving a free bacon fat latte"
           };
 
           textModulesData.Add(textModuleData);          
@@ -59,8 +59,8 @@ namespace WalletObjectsSample.Verticals
           // Define Uris
           IList<Uri> uris = new List<Uri>();
           Uri uri1 = new Uri() {
-            Description = "uri 1 description",
-            UriValue = "http://www.google.com"
+            Description = "My Baconrista Account",
+            UriValue = "http://www.baconrista.com/myaccount?id=1234567890"
           };
           Uri uri2 = new Uri() {
             Description = "uri 2 description",
@@ -76,27 +76,27 @@ namespace WalletObjectsSample.Verticals
           
           // Define Info Module
           IList<LabelValue> row0cols = new List<LabelValue>();
-          LabelValue row0col0 = new LabelValue() { Label = "Label0-0", Value = "value0-0" };
-          LabelValue row0col1 = new LabelValue() { Label = "Label0-1", Value = "value0-1" };          
+          LabelValue row0col0 = new LabelValue() { Label = "Member Name", Value = "Jane Doe" };
+          LabelValue row0col1 = new LabelValue() { Label = "Membership #", Value = "1234567890" };          
           row0cols.Add(row0col0);
           row0cols.Add(row0col1);
 
           IList<LabelValue> row1cols = new List<LabelValue>();
-          LabelValue row1col0 = new LabelValue() { Label = "Label1-0", Value = "value1-0" };
-          LabelValue row1col1 = new LabelValue() { Label = "Label1-1", Value = "value1-1" };          
+          LabelValue row1col0 = new LabelValue() { Label = "Next Reward in", Value = "2 coffees" };
+          LabelValue row1col1 = new LabelValue() { Label = "Member Since", Value = "01/15/2013" };          
           row1cols.Add(row1col0);
           row1cols.Add(row1col1);
 
           IList<LabelValueRow> rows = new List<LabelValueRow>();
-          LabelValueRow row0 = new LabelValueRow() { HexBackgroundColor = "#AEAEAE", Columns = row0cols };
-          LabelValueRow row1 = new LabelValueRow() { HexBackgroundColor = "#AEAEAE", Columns = row1cols };
+          LabelValueRow row0 = new LabelValueRow() { HexBackgroundColor = "#BBCCFC", Columns = row0cols };
+          LabelValueRow row1 = new LabelValueRow() { HexBackgroundColor = "#FFFB00", Columns = row1cols };
 
           rows.Add(row0);
           rows.Add(row1);
 
           InfoModuleData infoModuleData = new InfoModuleData() {
-            HexFontColor = "#FF3300",
-            HexBackgroundColor = "#ABABAB",
+            HexFontColor = "#FFFFFF",
+            HexBackgroundColor = "#FC058C",
             ShowLastUpdateTime = true,
             LabelValueRows = rows 
           };
@@ -109,30 +109,14 @@ namespace WalletObjectsSample.Verticals
             Version = "1",
             State = "active",
             Barcode = barcode,
-            AccountName = "Joe Smith",
+            AccountName = "Jane Doe",
             AccountId = "1234567890",
             LoyaltyPoints = points,
             InfoModuleData = infoModuleData,
             TextModulesData = textModulesData,
-            LinksModuleData = linksModuleData,
-            //IssuerData = objectIssuerData
+            LinksModuleData = linksModuleData
           };
           
-/*
-          // Define Wallet Instance
-          LoyaltyObject loyaltyObj = new LoyaltyObject()
-          {
-            ClassId = issuerId + "." + classId,
-            Id = issuerId + "." + objectId,
-            Version = "1",
-            State = "active",
-            Barcode = barcode,
-            AccountName = "Joe Smith",
-            AccountId = "1234567890",
-            LoyaltyPoints = points,
-            //IssuerData = objectIssuerData
-          };
-*/
           return loyaltyObj;
         }
 
@@ -214,7 +198,7 @@ namespace WalletObjectsSample.Verticals
             wobClass.AccountIdLabel = "Member Id";
             wobClass.RenderSpecs = renderSpec;
             wobClass.Messages = messages;
-            wobClass.ReviewStatus = "draft";
+            wobClass.ReviewStatus = "underReview";
             wobClass.AllowMultipleUsersPerObject = true;
             wobClass.Locations = locations;
 
